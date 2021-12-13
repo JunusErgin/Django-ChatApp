@@ -1,0 +1,16 @@
+<h1>Login</h1>
+
+
+{% if wrongPassword %}
+<p>Benutzername oder Passwort ist falsch!</p>
+{% endif %}
+
+
+
+<form method="POST" action="/login/">
+    {% csrf_token %}
+    <div><input name="username" type="text"></div>
+    <div><input name="password" type="password"></div>
+    <div><button>Login</button></div>
+
+</form>
