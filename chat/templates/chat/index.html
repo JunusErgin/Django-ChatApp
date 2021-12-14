@@ -1,9 +1,12 @@
-{% extends "base.html" %} {% block content %} {% if request.user.is_authenticated %} {% for message in messages %}
-<div>
-    <span class="color-gray">[{{ message.created_at }}]</span> {{ message.author.first_name }}: <i>{{ message.text }} </i>
-</div>
-{% endfor %}
+{% extends "base.html" %} {% block content %} {% if request.user.is_authenticated %}
 
+<div id="messageContainer">
+    {% for message in messages %}
+    <div>
+        <span class="color-gray">[{{ message.created_at }}]</span> {{ message.author.first_name }}: <i>{{ message.text }} </i>
+    </div>
+    {% endfor %}
+</div>
 <script>
     async function sendMessage() {
         let fd = new FormData();
@@ -12,11 +15,25 @@
         fd.append('textmessage', messageField.value);
         fd.append('csrfmiddlewaretoken', token);
         try {
+            messageContainer.innerHTML += `
+                <div id="deleteMessage">
+                    <span class="color-gray">[DATUM]</span> {{ request.user.first_name }}: <i class="color-gray">${messageField.value} </i>
+                </div>`;
             await fetch('/chat/', {
                 method: 'POST',
                 body: fd
             });
+
+            document.getElementById('deleteMessage').remove();
+            messageContainer.innerHTML += `
+                <div">
+                    <span class="color-gray">[DATUM]</span> {{ request.user.first_name }}: <i>${messageField.value} </i>
+                </div>`;
+
             console.log('Success!!');
+
+
+
         } catch (e) {
             console.error('An error occured', e);
         }
