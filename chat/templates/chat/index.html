@@ -19,11 +19,12 @@
                 <div id="deleteMessage">
                     <span class="color-gray">[DATUM]</span> {{ request.user.first_name }}: <i class="color-gray">${messageField.value} </i>
                 </div>`;
-            await fetch('/chat/', {
+            let response = await fetch('/chat/', {
                 method: 'POST',
                 body: fd
             });
-
+            let json = await response.json();
+            console.log('json is', json);
             document.getElementById('deleteMessage').remove();
             messageContainer.innerHTML += `
                 <div">
