@@ -4,13 +4,33 @@
 </div>
 {% endfor %}
 
+<script>
+    async function sendMessage() {
+        let fd = new FormData();
+        let token = '{{ csrf_token }}';
+
+        fd.append('textmessage', messageField.value);
+        fd.append('csrfmiddlewaretoken', token);
+        try {
+            await fetch('/chat/', {
+                method: 'POST',
+                body: fd
+            });
+            console.log('Success!!');
+        } catch (e) {
+            console.error('An error occured', e);
+        }
 
 
-<form action="/chat/" method="post">
+    }
+</script>
+
+
+<form onsubmit="sendMessage(); return false;" method="post">
     {% csrf_token %}
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <input class="mdl-textfield__input" name="textmessage" type="text" id="sample3">
-        <label class="mdl-textfield__label" for="sample3">Text...</label>
+        <input class="mdl-textfield__input" name="textmessage" type="text" id="messageField">
+        <label class="mdl-textfield__label" for="messageField">Text...</label>
     </div>
 
 
