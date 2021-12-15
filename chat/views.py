@@ -8,6 +8,10 @@ from django.core import serializers
 
 @login_required(login_url='/login/')
 def index(request):
+    """
+    This is a view to render the chat html.
+    :param request: Request ofject with several infos os the request.
+    """
     if request.method == 'POST':
         print("Received data " + request.POST['textmessage'])
         myChat = Chat.objects.get(id=1)
