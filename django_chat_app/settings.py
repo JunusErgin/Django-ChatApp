@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '34.159.219.34',
     '10.156.0.2',
+    'tutorial.herr-programmierer.de',
 ]
 
 

@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 
 from chat.views import index, login_view
+from django.conf.urls.static import static
+from django_chat_app import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('chat/', index),
     path('login/', login_view),
-]
+] + staticfiles_urlpatterns()
