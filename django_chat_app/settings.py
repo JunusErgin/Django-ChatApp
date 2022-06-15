@@ -34,8 +34,10 @@ ALLOWED_HOSTS = [
     '34.159.219.34',
     '10.156.0.2',
     'tutorial.herr-programmierer.de',
+    '*.gitpod.io'
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
 # Application definition
 
