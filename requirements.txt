@@ -17,6 +17,7 @@ Pygments==2.10.0
 pyparsing==3.0.6
 pytz==2021.3
 requests==2.26.0
+sentry-sdk==1.8.0
 snowballstemmer==2.2.0
 Sphinx==4.3.1
 sphinx-rtd-theme==1.0.0
@@ -27,5 +28,5 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.3
 sphinxcontrib-serializinghtml==1.1.5
 sqlparse==0.4.2
-typing-extensions==4.1.1
+typing_extensions==4.1.1
 urllib3==1.26.7
