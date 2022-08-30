@@ -21,9 +21,12 @@ from django.conf.urls.static import static
 from django_chat_app import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+def trigger_error(request):
+    division_by_zero = 1 / 0
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('chat/', index),
     path('login/', login_view),
+    path('sentry-debug/', trigger_error),
 ] + staticfiles_urlpatterns()
