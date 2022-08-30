@@ -36,8 +36,11 @@ ALLOWED_HOSTS = [
     '34.159.219.34',
     '10.156.0.2',
     'tutorial.herr-programmierer.de',
+    '*.gitpod.io',
+    'junustest1.pythonanywhere.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
 # Application definition
 
@@ -87,6 +90,7 @@ WSGI_APPLICATION = 'django_chat_app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -103,6 +107,19 @@ DATABASES = {
 #         'PASSWORD': 'cb2558dec70047d49ffde3848658845d60bb43535e6a09282c26914d4b24b0b5',
 #     }
 # }
+
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'd7vbhaulhvdrhm',
+#        'HOST': 'ec2-52-31-219-113.eu-west-1.compute.amazonaws.com',
+#        'PORT': '5432',
+#        'USER': 'comuyqaeiynvrl',
+#        'PASSWORD': 'cb2558dec70047d49ffde3848658845d60bb43535e6a09282c26914d4b24b0b5',
+#    }
+#}
+>>>>>>> 0e3fa6f86ee325840f59be9e44c0f1b253892bce
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
