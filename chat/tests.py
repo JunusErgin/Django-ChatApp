@@ -8,5 +8,5 @@ class ChatTest(TestCase):
         self.client = Client()
         self.user = User.objects.create_user('test_user', password='test_user')
         self.client.login(username='test_user', password='test_user')
-        response = self.client.get('/chat/')
+        response = self.client.get('/cdhat/')
         self.assertEqual(response.status_code, 200)
