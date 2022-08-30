@@ -119,7 +119,6 @@ DATABASES = {
 #        'PASSWORD': 'cb2558dec70047d49ffde3848658845d60bb43535e6a09282c26914d4b24b0b5',
 #    }
 #}
->>>>>>> 0e3fa6f86ee325840f59be9e44c0f1b253892bce
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
